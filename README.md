@@ -1,6 +1,8 @@
-# Research_Masters_jxue
+# Research Masters 
 ======
-
+Jung Xue
 ======================================
 Supervisor: Professor Thomas Lumley
 ------------------------------------------------------------------------------------------------------
+
+Hello
