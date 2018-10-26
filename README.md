@@ -1,4 +1,4 @@
-Anomaly Detection in Emergency Department Arrival
+Anomaly Detection in Emergency Department Arrival, with Bayesian Hierarchical Models
 =======================================
 
 Research Masters, Department of Statistics, University of Auckland
