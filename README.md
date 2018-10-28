@@ -11,5 +11,5 @@ Supervisor: Professor Thomas Lumley
 
 ------------------------------------------------------------------------------------------------------
 Enter text here
-
+![grab-landing-page](https://github.com/JungXue/Research_Masters_jxue/edit/master/spbwritehard.gif)
 ------------------------------------------------------------------------------------------------------
