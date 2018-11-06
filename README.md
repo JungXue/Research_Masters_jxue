@@ -4,6 +4,11 @@ Anomaly Detection in Emergency Department Arrival, with Bayesian Hierarchical Mo
 Research Masters, Department of Statistics, University of Auckland
 
 --------------------------------------
+| Name | Description          |
+| ------------- | ----------- |
+| Help      |  help window.|
+| Close     | _Closes_ a window     |
+
 
 | ------------| ----------- |
 |Student: [Jung Xue](http://Xue.rbind.io) | jxue533@aucklanduni.ac.nz|
