@@ -7,7 +7,7 @@ Research Masters, Department of Statistics, University of Auckland
 
 Student: Jung Xue
 
-Supervisor: Professor Thomas Lumley
+Supervisor: [Professor Thomas Lumley](https://www.stat.auckland.ac.nz/people/tlum005)
 
 ------------------------------------------------------------------------------------------------------
 Enter text here
