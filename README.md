@@ -30,6 +30,9 @@ Research Masters, Department of Statistics, University of Auckland
 ------------------------------------------------------------------------------------------------------
 # To do lists
 1. try to create a pacinkofram for my trees http://www.chewydata.com/samples/141017-Pachinkogram/pachinkogram.html
+2. proposal is kind of bad, maybe redo it after I finished the first section
+3. Need to finish my models and get the estimates for the simulation asap, thiomas is probably not impressed at my progress
+4. Need to work on Latex, you are way way way behind the expected word counts
 -----------------------------------------------------------------------------------------------------
 # Notes
 will push my thesis files on github after I actually figure out how to version control, and I really need to ask my supervisor about uploading thesis material on github, just incase.
