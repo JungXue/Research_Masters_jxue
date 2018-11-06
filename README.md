@@ -5,9 +5,9 @@ Research Masters, Department of Statistics, University of Auckland
 
 --------------------------------------
 
-Student: [Jung Xue](http://Xue.rbind.io)
+Student: [Jung Xue](http://Xue.rbind.io)  jxue533@aucklanduni.ac.nz
 
-Supervisor: [Professor Thomas Lumley](https://www.stat.auckland.ac.nz/people/tlum005)
+Supervisor: [Professor Thomas Lumley](https://www.stat.auckland.ac.nz/people/tlum005)  t.lumley@auckland.ac.nz
 
 ------------------------------------------------------------------------------------------------------
 ## Background:
