@@ -4,9 +4,8 @@ Anomaly Detection in Emergency Department Arrival, with Bayesian Hierarchical Mo
 Research Masters, Department of Statistics, University of Auckland
 
 --------------------------------------
-| Help      | ~~Display the~~ help window.|
-| Close     | _Closes_ a window     |
 
+| ------------| ----------- |
 |Student: [Jung Xue](http://Xue.rbind.io) | jxue533@aucklanduni.ac.nz|
 |Supervisor: [Professor Thomas Lumley](https://www.stat.auckland.ac.nz/people/tlum005) | t.lumley@auckland.ac.nz|
 
