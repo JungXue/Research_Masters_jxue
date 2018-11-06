@@ -16,3 +16,5 @@ will start after I actually figure out how to version control, and I really need
 
 ![](spbwritehard.gif)
 ------------------------------------------------------------------------------------------------------
+# To do lists
+1. try to create a pacinkofram for my trees http://www.chewydata.com/samples/141017-Pachinkogram/pachinkogram.html
