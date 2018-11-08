@@ -37,7 +37,6 @@ Research Masters, Department of Statistics, University of Auckland
 # Notes
 will push my thesis files on github after I actually figure out how to version control, and I really need to ask my supervisor about uploading thesis material on github, just incase.
 
-<p align="center">
-  ![](spbwritehard.gif)
-</p>
+![](spbwritehard.gif)
+
 
