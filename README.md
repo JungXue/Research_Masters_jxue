@@ -33,6 +33,7 @@ Anomaly Detection in Emergency Department Arrival, with Bayesian Hierarchical Mo
 2. proposal is kind of bad, maybe redo it after I finished the first section
 3. Need to finish my models and get the estimates for the simulation asap, Thomas is probably not impressed at my progress
 4. Need to work on Latex bruh, you are way way way behind the expected progress in word counts
+5. produce hierarchical plots using codes from [Rob J Hudeman](https://otexts.org/fpp2/hts.html)
 -----------------------------------------------------------------------------------------------------
 # Notes
 will push my thesis files on github after I actually figure out how to version control, and I really need to ask my supervisor about uploading thesis material on github, just incase.
