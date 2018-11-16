@@ -29,7 +29,7 @@ Anomaly Detection in Emergency Department Arrival, with Bayesian Hierarchical Mo
 
 ------------------------------------------------------------------------------------------------------
 # To do lists
-1. try to create a pacinkogram for my trees http://www.chewydata.com/samples/141017-Pachinkogram/pachinkogram.html
+1. try to create a [pacinkogram](http://www.chewydata.com/samples/141017-Pachinkogram/pachinkogram.html) for my trees 
 2. proposal is kind of bad, maybe redo it after I finished the first section
 3. Need to finish my models and get the estimates for the simulation asap, Thomas is probably not impressed at my progress
 4. Need to work on Latex bruh, you are way way way behind the expected progress in word counts
