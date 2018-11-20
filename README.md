@@ -37,6 +37,7 @@ Estimated completion date: July 2019
 4. Need to work on Latex bruh, you are way way way behind the expected progress in word counts
 5. Revise amd reorganise R codes for simualted data.
 6. Need to spy on [Hyndman](https://otexts.org/fpp2/hierarchical.html), Berry, [Gelmen](https://andrewgelman.com/) and [Steort](https://resteorts.github.io/), where they go for break fast when do they sleep etc....just kidding, future me, go and read their papers. 
+7. draw tree using [graphviz](http://www.graphviz.org/)
 -----------------------------------------------------------------------------------------------------
 # Notes
 will push my thesis files on github after I actually figure out how to version control, and I really need to ask my supervisor about uploading thesis material on github, just incase.
