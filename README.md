@@ -4,6 +4,7 @@ Anomaly Detection in Emergency Department Arrival, with Bayesian Hierarchical Mo
 **Research Masters, [Department of Statistics, The University of Auckland](https://www.stat.auckland.ac.nz/en.html)**
 
 Estimated completion date: July 2019
+
 --------------------------------------
 
 |   | Name  | Contact |
