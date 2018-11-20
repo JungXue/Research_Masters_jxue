@@ -34,6 +34,7 @@ Anomaly Detection in Emergency Department Arrival, with Bayesian Hierarchical Mo
 3. Need to finish my models and get the estimates for the simulation asap, Thomas is probably not impressed at my progress
 4. Need to work on Latex bruh, you are way way way behind the expected progress in word counts
 5. Revise amd reorganise R codes for simualted data.
+6. Need to spy on Hyndman, Berry, Gelmen and Steort, where they go for break fast when do they sleep etc....just kidding, future me, go and read their papers. 
 -----------------------------------------------------------------------------------------------------
 # Notes
 will push my thesis files on github after I actually figure out how to version control, and I really need to ask my supervisor about uploading thesis material on github, just incase.
