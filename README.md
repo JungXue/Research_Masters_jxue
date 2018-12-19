@@ -42,6 +42,8 @@ Estimated completion date: July 2019
 # Notes
 will push my thesis files on github after I actually figure out how to version control, and I really need to ask my supervisor about uploading thesis material on github, just incase.
 
-![](spbwritehard.gif)
+<p align="center">
+  <img src="spbwritehard.gif">
+</p>
 
 
