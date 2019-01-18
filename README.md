@@ -40,7 +40,6 @@ Estimated completion date: July 2019
 7. draw tree using [graphviz](http://www.graphviz.org/)
 -----------------------------------------------------------------------------------------------------
 # Notes
-will push my thesis files on github after I actually figure out how to version control, and I really need to ask my supervisor about uploading thesis material on github, just incase.
 
 <p align="center">
   <img src="spbwritehard.gif">
