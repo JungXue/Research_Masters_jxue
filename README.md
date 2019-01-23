@@ -27,7 +27,7 @@ Estimated completion date: July 2019
   
 ## Resources required:
 
-  We plan to use hospital emergency department visits over time data, from U.S (MMIC) or New Zealand (NMD). We will require permission to obtain these data and the application process are expected to take over a month. If we could not obtain our preferred datasets, we will try to obtain some relatively large, publically available datasets that has a variable with hierarchical structure, such as NZ Census or Thousand Genomes project. Usage of real life data is preferred, we will use simulation but it may not be adequate. 
+  We plan to use hospital emergency department visits over time data, from U.S ([MIMIC](https://mimic.physionet.org/)) or New Zealand ([NMD](https://www.health.govt.nz/nz-health-statistics/national-collections-and-surveys/collections/national-minimum-dataset-hospital-events)). We will require permission to obtain these data and the application process are expected to take over a month. If we could not obtain our preferred datasets, we will try to obtain some relatively large, publically available datasets that has a variable with hierarchical structure, such as NZ Census or Thousand Genomes project. Usage of real life data is preferred, we will use simulation but it may not be adequate. 
 
 ------------------------------------------------------------------------------------------------------
 # To do lists
