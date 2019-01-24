@@ -39,7 +39,7 @@ Estimated completion date: July 2019
 6. Need to spy on [Hyndman](https://otexts.org/fpp2/hierarchical.html), Berry, [Gelmen](https://andrewgelman.com/) and [Steort](https://resteorts.github.io/), where they go for break fast when do they sleep etc....just kidding, future me, go and read their papers. 
 7. draw tree using [graphviz](http://www.graphviz.org/)
 -----------------------------------------------------------------------------------------------------
-# Notes
+# Current Status: 
 
 <p align="center">
   <img src="spbwritehard.gif">
