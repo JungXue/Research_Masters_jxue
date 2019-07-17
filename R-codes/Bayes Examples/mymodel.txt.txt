@@ -1,0 +1,26 @@
+model{
+    
+    # Priors
+    
+    mu ~ dnorm(0, .001)
+    ## Overall mean  
+    
+    sigma.regions ~ dunif(0,20)
+    tau.regions <- 1/(sigma.regions*sigma.regions)
+    sigma.locations ~ dunif(0,20)
+    tau.locations <- 1/(sigma.locations*sigma.locations)
+    sigma.reps ~ dunif(0,20)
+    tau.reps <- 1/(sigma.reps*sigma.reps)
+    
+    
+    # Model structure
+    for(i in 1:n.regions){
+    mu.region[i] ~ dnorm(mu, tau.regions)
+    }
+    for(i in 1:n.locations){
+    mu.location[i] ~ dnorm(mu.region[region[i]], tau.locations)
+    }
+    for(i in 1:n.obs){
+    observed[i] ~ dnorm(mu.location[location[i]], tau.reps)
+    }
+    }

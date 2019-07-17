@@ -1,0 +1,5 @@
+library(devtools)
+library(shinyStan)
+library(glmer2stan)
+library(rstan)
+library(lmerTest)
