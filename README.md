@@ -31,13 +31,7 @@ Estimated completion date: July 2019
 
 ------------------------------------------------------------------------------------------------------
 # To do lists
-1. try to create a [pachinkogram](http://www.chewydata.com/samples/141017-Pachinkogram/pachinkogram.html) for my trees 
-2. produce hierarchical plots using codes from [Rob J Hyndeman](https://otexts.org/fpp2/hts.html)
-3. Need to finish my models and get the estimates for the simulation asap, Thomas is probably not impressed at my progress
-4. Need to work on Latex bruh, you are way way way behind the expected progress in word counts
-5. Revise amd reorganise R codes for simualted data.
-6. Need to spy on [Hyndman](https://otexts.org/fpp2/hierarchical.html), Berry, [Gelmen](https://andrewgelman.com/) and [Steort](https://resteorts.github.io/), where they go for break fast when do they sleep etc....just kidding, future me, go and read their papers. 
-7. draw tree using [graphviz](http://www.graphviz.org/)
+1. Cry about the thesis
 -----------------------------------------------------------------------------------------------------
 # Current Status: 
 
