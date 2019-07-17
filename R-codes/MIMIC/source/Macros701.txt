@@ -1,0 +1,31 @@
+%MACRO allprint(f);
+TITLE2 "File &f printed for &sysuserid";
+proc print data = &f;
+run;
+title2;
+%mend;
+
+%macro nprint(f, n);
+proc print data = &f (obs = &n);
+title "File &f all variables &n records";
+run;
+%mend;
+
+%macro nvprint(f, vars, n);
+proc print data = &f (obs = &n);
+title "File &f variables &vars,  &n records";
+var &vars;
+run;
+%mend;
+
+%macro sortit(f,vars);
+proc sort data =&f; by &vars; run;
+%mend;
+
+%macro freqcheck(f,v);
+proc freq data = &f;
+tables &v/
+nopercent norow nocol missing
+;
+run;
+%mend;

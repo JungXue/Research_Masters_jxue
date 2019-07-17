@@ -1,0 +1,98 @@
+/*MY MACROS*/
+
+%MACRO printX(data,obs);
+TITLE2 "First &obs observations of &data dataset";        
+PROC PRINT DATA= &data (OBS= &obs );
+RUN;
+TITLE2;
+%MEND;
+
+%MACRO contentsX(data);
+TITLE2 "Contents summary of &data dataset";        
+PROC CONTENTS DATA= &data ; 
+RUN;
+TITLE2;
+%MEND;
+
+%macro sortX(data,vars);
+proc sort data =&data; by &vars; run;
+%mend;
+
+%macro nrowX(data);
+proc sql ;
+TITLE2 "Number of rows in &data dataset"; 
+select count(*) into :nobs from &data;
+quit;
+TITLE2;
+%mend;
+
+%macro nlevelX(data,var);
+TITLE2 "Distinct number of &var in &data dataset"; 
+PROC FREQ DATA = &data NLEVELS;
+TABLES &var / NOPRINT;
+RUN;
+TITLE2;
+%mend;
+
+%macro missingX(data);
+TITLE2 "Number of missing values for variables in &data dataset"; 
+PROC MEANS DATA= &data NMISS N;             
+RUN;
+TITLE2;
+%mend;
+
+%macro missingXc(data);
+TITLE2 "Number of missing values for all charcter variables in &data dataset"; 
+proc format;
+ value $missfmt ' '='Missing' other='Not Missing';
+ value  missfmt  . ='Missing' other='Not Missing';
+run;
+proc freq data=&data; 
+format _CHAR_ $missfmt.; /* apply format for the duration of this PROC */
+tables _CHAR_ / missing missprint nocum nopercent;
+run;
+TITLE2;
+%mend;
+
+%macro missingXcn(data);
+TITLE2 "Number of missing values for all numeric and character variables in &data dataset"; 
+proc format;
+ value $missfmt ' '='Missing' other='Not Missing';
+ value  missfmt  . ='Missing' other='Not Missing';
+run;
+proc freq data=&data; 
+format _CHAR_ $missfmt.; /* apply format for the duration of this PROC */
+tables _CHAR_ / missing missprint nocum nopercent;
+format _NUMERIC_ missfmt.;
+tables _NUMERIC_ / missing missprint nocum nopercent;
+run;
+TITLE2;
+%mend;
+
+%macro freqtest(f,v);
+title2 "Frequency table for file &f, tables &v, printed for &sysuserid";
+proc freq data = &f;
+tables &v/
+nopercent norow nocol
+;
+run;
+title2;
+%mend;
+
+%MACRO freqcheckX(data,var);
+PROC FREQ DATA = &data;
+TITLE2 "frequency check for &var from file &data";
+TABLES &var
+/NOPERCENT NOROW NOCOL MISSING
+;
+RUN;
+TITLE2;
+%MEND;
+
+%MACRO gchartXX(data,var);
+TITLE2 "Barplot of variable &var in dataset &data ";
+PROC GCHART DATA= &data;                 
+HBAR &var / DISCRETE MISSING LEVELS=all;
+RUN;
+TITLE2;
+%MEND;
