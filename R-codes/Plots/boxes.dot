@@ -1,0 +1,25 @@
+digraph tree{
+  
+  graph[overlap = true,fontsize=14]
+  
+  node[shape=circle,fixedsize=true,width=0.5,style=filled,color=".7 .3 1.0"]
+  Total;A;B;AA;AB;BA;"BB"
+  
+  Total[color="indianred1"]
+  A[color="paleturquoise1"]
+  B[color="limegreen"]
+  
+  AA[color="paleturquoise1"]
+  AB[color="paleturquoise1"]
+  BA[color="limegreen"]
+  "BB"[color="limegreen"]
+  
+  Total->A[arrowhead=none] 
+  Total->B[arrowhead=none]
+
+  A->AA[arrowhead=none]
+  A->AB[arrowhead=none]
+
+  B->BA[arrowhead=none]
+  B->"BB"[arrowhead=none]
+}
