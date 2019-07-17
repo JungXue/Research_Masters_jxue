@@ -1,0 +1,498 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={R-Codes},
+            pdfauthor={Junhuang Xue},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{R-Codes}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Junhuang Xue}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{\today}
+
+
+\begin{document}
+\maketitle
+
+\subsection{R Markdown}\label{r-markdown}
+
+This is an R Markdown document. Markdown is a simple formatting syntax
+for authoring HTML, PDF, and MS Word documents. For more details on
+using R Markdown see \url{http://rmarkdown.rstudio.com}.
+
+When you click the \textbf{Knit} button a document will be generated
+that includes both content as well as the output of any embedded R code
+chunks within the document. You can embed an R code chunk like this:
+
+penisssssssssssssssssssssssssss
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(cars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+\end{verbatim}
+
+\subsection{Including Plots}\label{including-plots}
+
+You can also embed plots, for example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##########################################################################}
+\CommentTok{#                                                                        #}
+\CommentTok{# Simulation                                                             #}
+\CommentTok{#                                                                        #}
+\NormalTok{##########################################################################}
+\CommentTok{# general hints cor coding:}
+\CommentTok{# monitor time each chunk code took, }
+\CommentTok{# dont have to optimise chunks that used insignificant amount of time }
+\CommentTok{# use for loop isf it doesnt take too long, }
+\CommentTok{# use interaction function}
+\CommentTok{# debug and testing codes are contained within an empty  functions}
+\CommentTok{#}
+\CommentTok{# V1: rand.day.time}
+\CommentTok{#     simdata (sim.number, time.start, time.end, cat1n, cat2n)}
+\CommentTok{#     check simulation with cumulative plot and count plot}
+\CommentTok{#}
+\CommentTok{# V2: Fixed the bug that caused as.POSIXct to outout different time zone}
+\CommentTok{#     simdata (cat2.val:Able to add custome matrix as terminal roots)}
+\CommentTok{#}
+\CommentTok{# V3: rand.day}
+\CommentTok{#     simdata(added leaf variable, various debugging, cleanning)}
+\CommentTok{#     contain test and debug codes in an empty function}
+\CommentTok{#     cumdata}
+\CommentTok{#     tabulatedata }
+\CommentTok{#}
+\CommentTok{# Todo}
+\CommentTok{# V4: fig bug in tabulatedata }
+\CommentTok{#     anomaly}
+\CommentTok{#     }
+\CommentTok{#packages}
+\CommentTok{#qpcr}
+\CommentTok{#minpack.lm}
+\NormalTok{###################################################################################################}
+
+\NormalTok{### Function 1 ###}
+
+\NormalTok{###Create a number of random times}
+
+\CommentTok{# rand.day.time originally by Dirk Eddelbuettel 2012}
+\CommentTok{# Debugged by Thomas Lumley on 28 Oct 2018}
+\CommentTok{# https://stackoverflow.com/questions/14720983/efficiently-generate-a-random-sample-of-times-and-dates-between-two-dates}
+
+\NormalTok{rand.day.time <-}\StringTok{ }\NormalTok{function(N, }\DataTypeTok{st=}\StringTok{"2006/01/01 00:00:01"}\NormalTok{, }\DataTypeTok{et=}\StringTok{"2018/12/31 23:59:59"}\NormalTok{) \{}
+         \NormalTok{st <-}\StringTok{ }\KeywordTok{as.POSIXct}\NormalTok{(}\KeywordTok{strptime}\NormalTok{(st, }\DataTypeTok{format=}\StringTok{"%Y/%m/%d %H:%M:%S"}\NormalTok{, }\DataTypeTok{tz=}\StringTok{"Pacific/Auckland"}\NormalTok{))}
+         \NormalTok{et <-}\StringTok{ }\KeywordTok{as.POSIXct}\NormalTok{(}\KeywordTok{strptime}\NormalTok{(et, }\DataTypeTok{format=}\StringTok{"%Y/%m/%d %H:%M:%S"}\NormalTok{, }\DataTypeTok{tz=}\StringTok{"Pacific/Auckland"}\NormalTok{))}
+       \NormalTok{dt <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{difftime}\NormalTok{(et, st, }\DataTypeTok{unit=}\StringTok{"sec"}\NormalTok{))}
+       \NormalTok{ev <-}\StringTok{ }\KeywordTok{sort}\NormalTok{(}\KeywordTok{runif}\NormalTok{(N, }\DecValTok{0}\NormalTok{, dt))}
+       \NormalTok{rt <-}\StringTok{ }\NormalTok{st +}\StringTok{ }\NormalTok{ev}
+\NormalTok{\}}
+
+\NormalTok{### testing}
+\NormalTok{rand.day.time.test <-}\StringTok{ }\NormalTok{function()\{}
+
+\NormalTok{time.start =}\StringTok{ "2006/01/01 00:00:01"}
+\NormalTok{time.end =}\StringTok{ "2018/12/31 23:59:59"}
+\KeywordTok{print}\NormalTok{(}\KeywordTok{rand.day.time}\NormalTok{(}\DecValTok{5}\NormalTok{,time.start,time.end)) }
+
+\CommentTok{# system.time(rand.day.time(1000))}
+\CommentTok{# system.time(rand.day.time(1000000))}
+
+\NormalTok{test0 =}\StringTok{ }\KeywordTok{rand.day.time} \NormalTok{(}\DecValTok{100000}\NormalTok{, time.start, time.end)}
+\KeywordTok{head}\NormalTok{(test0)}
+\KeywordTok{tail}\NormalTok{(test0)}
+
+\NormalTok{t.char =}\StringTok{ }\KeywordTok{as.character}\NormalTok{(test0)                           }\CommentTok{# it is taking a while}
+\NormalTok{t.day =}\StringTok{ }\KeywordTok{as.character}\NormalTok{(}\KeywordTok{as.Date}\NormalTok{(t.char, }\DataTypeTok{units =} \StringTok{"days"}\NormalTok{))  }\CommentTok{# it is taking a while}
+\NormalTok{dailycount =}\StringTok{ }\KeywordTok{tabulate}\NormalTok{(}\KeywordTok{as.factor}\NormalTok{(t.day))}
+
+\KeywordTok{plot}\NormalTok{(dailycount,}\DataTypeTok{type=}\StringTok{"l"}\NormalTok{, }\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\KeywordTok{mean}\NormalTok{(dailycount), }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(dailycount[}\DecValTok{1}\NormalTok{], }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(}\KeywordTok{length}\NormalTok{(dailycount), dailycount[}\KeywordTok{length}\NormalTok{(dailycount)], }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+
+\NormalTok{\}}
+\NormalTok{##########################################################################################################}
+
+\NormalTok{### Function 2 ###}
+
+\NormalTok{### Create random day }
+
+\NormalTok{rand.day <-}\StringTok{ }\NormalTok{function(}\DataTypeTok{N =} \DecValTok{1}\NormalTok{, }\DataTypeTok{st =} \StringTok{"2006/01/01 00:00:01"}\NormalTok{, }\DataTypeTok{et =} \StringTok{"2018/12/31 23:59:59"}\NormalTok{)\{}
+\NormalTok{day =}\StringTok{ }\KeywordTok{as.character}\NormalTok{(}\KeywordTok{as.Date}\NormalTok{(}\KeywordTok{rand.day.time}\NormalTok{(N, st, et)), }\DataTypeTok{units =} \StringTok{"days"}\NormalTok{)}
+\KeywordTok{return}\NormalTok{(day)}
+\NormalTok{\}}
+
+\NormalTok{### testing }
+\NormalTok{rand.day.test <-}\StringTok{ }\NormalTok{function()\{}
+  
+\KeywordTok{rand.day}\NormalTok{()}
+\KeywordTok{rand.day}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\KeywordTok{str}\NormalTok{(}\KeywordTok{rand.day}\NormalTok{(}\DecValTok{1}\NormalTok{))}
+
+\KeywordTok{rand.day}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\KeywordTok{length}\NormalTok{(}\KeywordTok{rand.day}\NormalTok{(}\DecValTok{2}\NormalTok{))  }
+
+\NormalTok{\}}
+\NormalTok{############################################################################################################}
+
+\NormalTok{### Function 3 ###}
+
+\NormalTok{### Function to simulate raw data}
+
+\CommentTok{# 1,000 to 1,000,000 simulation recommended }
+\CommentTok{# time consuming parts}
+   \CommentTok{# create id}
+   \CommentTok{# as.character(as.date(time))}
+   \CommentTok{# ifelse to assign leaf dummies}
+
+\NormalTok{###################################################}
+
+\NormalTok{### codes for debugging simdata}
+\NormalTok{simdata.debug <-}\StringTok{ }\NormalTok{function()\{}
+  
+\NormalTok{sim.number =}\StringTok{ }\DecValTok{1000000}
+\NormalTok{time.start =}\StringTok{ "2006/01/01 00:00:01"}
+\NormalTok{time.end =}\StringTok{ "2018/12/31 23:59:59"}
+
+\NormalTok{cat2.val =}\StringTok{ }\NormalTok{qpcR:::}\KeywordTok{cbind.na}\NormalTok{(             }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{),                       }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+
+\NormalTok{cat2.val =}\StringTok{ }\NormalTok{qpcR:::}\KeywordTok{cbind.na}\NormalTok{(             }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{),                       }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{))}
+
+\NormalTok{cat2.val =}\StringTok{ }\NormalTok{qpcR:::}\KeywordTok{cbind.na}\NormalTok{(             }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{200}\NormalTok{,}\DecValTok{100}\NormalTok{),                       }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{200}\NormalTok{,  }\DecValTok{0}\NormalTok{),}
+  \KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,  }\DecValTok{0}\NormalTok{,  }\DecValTok{0}\NormalTok{))}
+
+\NormalTok{cat2.val}
+\KeywordTok{str}\NormalTok{(cat2.val)}
+\NormalTok{\}}
+\NormalTok{###################################################}
+
+\NormalTok{simdata <-function(}\DataTypeTok{sim.number =} \DecValTok{1000000}\NormalTok{,                   }\CommentTok{# number of simulations}
+                   \DataTypeTok{repeats =}\DecValTok{1}\NormalTok{,                             }\CommentTok{# how many time we run simulation and take mean  ##########}
+                                                           \CommentTok{# how to do this????}
+                   \DataTypeTok{time.start =} \StringTok{"2006/01/01 00:00:01"}\NormalTok{,     }\CommentTok{# start and end of period }
+                   \DataTypeTok{time.end =} \StringTok{"2018/12/31 23:59:59"}\NormalTok{,}
+                   \DataTypeTok{cat2.val =} \NormalTok{qpcR:::}\KeywordTok{cbind.na}\NormalTok{(             }\CommentTok{# number in leafs, sum to 1000}
+                     \KeywordTok{c}\NormalTok{(}\DecValTok{250}\NormalTok{,}\DecValTok{250}\NormalTok{),                           }\CommentTok{# Use 0 for empty values in matrix }
+                     \KeywordTok{c}\NormalTok{(}\DecValTok{250}\NormalTok{,}\DecValTok{250}\NormalTok{)))\{                         }
+  
+\NormalTok{###error checking}
+  
+  \NormalTok{if (sim.number >}\StringTok{ }\DecValTok{10000000}\NormalTok{)}
+    \KeywordTok{stop}\NormalTok{(}\StringTok{"too many simulations, may be too slow"}\NormalTok{)}
+  \NormalTok{if (}\KeywordTok{any}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(}\KeywordTok{as.vector}\NormalTok{(cat2.val))) ==}\StringTok{ }\NormalTok{T)}
+    \KeywordTok{stop}\NormalTok{(}\StringTok{"cat2.val should not contain NA, replace NA with 0"}\NormalTok{)}
+
+\CommentTok{#  x=as.vector(cat2.val)}
+\CommentTok{#  if (!is.numeric(x) || !all(is.finite(x) || x < 0))}
+\CommentTok{#    stop("invalid matrix values, use real numbers")}
+    
+\NormalTok{### identifiers/key variables}
+  
+  \NormalTok{index =}\StringTok{ }\DecValTok{1}\NormalTok{:sim.number }
+  \NormalTok{EventID =}\StringTok{ }\KeywordTok{sprintf}\NormalTok{(}\StringTok{"%08d"}\NormalTok{, }\KeywordTok{sample}\NormalTok{(}\DecValTok{1}\NormalTok{:}\KeywordTok{paste}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\DecValTok{9}\NormalTok{,}\DecValTok{8}\NormalTok{), }\DataTypeTok{collapse=}\StringTok{""}\NormalTok{), }
+                    \NormalTok{sim.number,}\DataTypeTok{replace=}\NormalTok{F))}
+ 
+\NormalTok{### select random times}
+\CommentTok{#}
+\NormalTok{rand.day.time  <-}\StringTok{ }\NormalTok{function(N, }\DataTypeTok{st=}\NormalTok{time.start, }\DataTypeTok{et =} \NormalTok{time.end) \{}
+    \NormalTok{st <-}\StringTok{ }\KeywordTok{as.POSIXct}\NormalTok{(}\KeywordTok{strptime}\NormalTok{(st, }\DataTypeTok{format=}\StringTok{"%Y/%m/%d %H:%M:%S"}\NormalTok{, }\DataTypeTok{tz=}\StringTok{"Pacific/Auckland"}\NormalTok{))}
+    \NormalTok{et <-}\StringTok{ }\KeywordTok{as.POSIXct}\NormalTok{(}\KeywordTok{strptime}\NormalTok{(et, }\DataTypeTok{format=}\StringTok{"%Y/%m/%d %H:%M:%S"}\NormalTok{, }\DataTypeTok{tz=}\StringTok{"Pacific/Auckland"}\NormalTok{))}
+    \NormalTok{dt <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{difftime}\NormalTok{(et, st, }\DataTypeTok{unit=}\StringTok{"sec"}\NormalTok{))}
+    \NormalTok{ev <-}\StringTok{ }\KeywordTok{sort}\NormalTok{(}\KeywordTok{runif}\NormalTok{(N, }\DecValTok{0}\NormalTok{, dt)) }\CommentTok{#<------------------------------- add seasonality here???}
+    \NormalTok{rt <-}\StringTok{ }\NormalTok{st +}\StringTok{ }\NormalTok{ev}
+\NormalTok{\}}
+
+\NormalTok{time =}\StringTok{ }\KeywordTok{rand.day.time}\NormalTok{(sim.number, time.start, time.end)}
+\NormalTok{time.char =}\StringTok{ }\KeywordTok{as.character}\NormalTok{(time)}
+\NormalTok{time.day =}\StringTok{ }\KeywordTok{as.character}\NormalTok{(}\KeywordTok{as.Date}\NormalTok{(time.char, }\DataTypeTok{units =} \StringTok{"days"}\NormalTok{))}
+
+\CommentTok{#----------------------------------------------------------#}
+\NormalTok{### simulate level 1 and 2 brunch using terminal root matrix}
+
+\NormalTok{cat1.val =}\StringTok{ }\KeywordTok{colSums}\NormalTok{(cat2.val, }\DataTypeTok{na.rm=}\NormalTok{T)}
+\NormalTok{cat2.tot =}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(!}\KeywordTok{is.na}\NormalTok{(cat2.val)))}
+
+\NormalTok{cat1.n =}\StringTok{ }\KeywordTok{length}\NormalTok{(cat1.val)}
+\NormalTok{cat2.n =}\StringTok{ }\KeywordTok{nrow}\NormalTok{(cat2.val)}
+  
+\NormalTok{cat1.let =}\StringTok{ }\KeywordTok{c}\NormalTok{(LETTERS[}\DecValTok{1}\NormalTok{:cat1.n])}
+\NormalTok{cat2.let =}\StringTok{ }\KeywordTok{c}\NormalTok{(LETTERS[}\DecValTok{1}\NormalTok{:cat2.n])}
+
+\NormalTok{sim.cat1 =}\StringTok{ }\KeywordTok{rep}\NormalTok{(cat1.let, cat1.val)}
+\NormalTok{cat1 =}\StringTok{ }\KeywordTok{sample}\NormalTok{(sim.cat1 , sim.number, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{cat2 =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\OtherTok{NA}\NormalTok{,sim.number)}
+\KeywordTok{tabulate}\NormalTok{(}\KeywordTok{as.factor}\NormalTok{(sim.cat1))}
+\KeywordTok{tabulate}\NormalTok{(}\KeywordTok{as.factor}\NormalTok{(cat1))}
+
+\NormalTok{Category =}\StringTok{ }\KeywordTok{cbind}\NormalTok{(cat1, cat2)}
+\KeywordTok{head}\NormalTok{(Category)}
+
+\NormalTok{for(i in }\DecValTok{1}\NormalTok{:cat2.n)\{}
+  \NormalTok{Category[}\KeywordTok{which}\NormalTok{(Category[,}\DecValTok{1}\NormalTok{] ==}\StringTok{ }\NormalTok{LETTERS[i]),}\DecValTok{2}\NormalTok{] =}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\KeywordTok{rep}\NormalTok{(cat2.let, cat2.val[,i]), }
+          \KeywordTok{sum}\NormalTok{(Category[,}\DecValTok{1}\NormalTok{] ==}\StringTok{ }\NormalTok{LETTERS[i]), }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{\}}
+\KeywordTok{head}\NormalTok{(Category)}
+\KeywordTok{table}\NormalTok{(Category[,}\DecValTok{1}\NormalTok{], Category[,}\DecValTok{2}\NormalTok{])}
+
+\NormalTok{Category =}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(Category)}
+\NormalTok{Category$leaf =}\StringTok{ }\KeywordTok{paste}\NormalTok{(Category$cat1, Category$cat2, }\DataTypeTok{sep =} \StringTok{""}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(Category)}
+
+\NormalTok{###assign name and value to dummy variable, name same as value}
+
+\NormalTok{cat1.name =}\StringTok{ }\NormalTok{cat1.let}
+\NormalTok{cat1.name}
+\NormalTok{cat2.name =}\StringTok{ }\KeywordTok{levels}\NormalTok{(}\KeywordTok{interaction}\NormalTok{(cat1.let, cat2.let, }\DataTypeTok{sep =} \StringTok{""}\NormalTok{, }\DataTypeTok{lex.order =} \OtherTok{TRUE}\NormalTok{))}
+\NormalTok{cat2.name }
+\NormalTok{names =}\StringTok{ }\KeywordTok{c}\NormalTok{(cat1.name, cat2.name)}
+\NormalTok{names}
+
+\KeywordTok{substr}\NormalTok{(cat2.name,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+\KeywordTok{substr}\NormalTok{(cat2.name,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+
+\NormalTok{for(i in }\DecValTok{1}\NormalTok{:(cat1.n+cat1.n*cat2.n))\{}
+\NormalTok{Category[,i}\DecValTok{+3}\NormalTok{] =}\StringTok{ }\KeywordTok{rep}\NormalTok{(names[i],sim.number)}
+\NormalTok{\}}
+\KeywordTok{colnames}\NormalTok{(Category) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"cat1"}\NormalTok{,}\StringTok{"cat2"}\NormalTok{,}\StringTok{"leaf"}\NormalTok{,cat1.name,cat2.name)}
+\KeywordTok{head}\NormalTok{(Category)}
+
+\NormalTok{### use ifelse to assign dummies variables}
+
+\NormalTok{for(i in }\DecValTok{1}\NormalTok{:cat1.n)\{}
+  \NormalTok{Category[,i}\DecValTok{+3}\NormalTok{] =}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(Category$cat1 ==}\StringTok{ }\NormalTok{Category[,i}\DecValTok{+3}\NormalTok{], }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{\}}
+
+\NormalTok{for(i in }\DecValTok{1}\NormalTok{:(cat1.n*cat2.n))\{}
+  \NormalTok{Category[,i}\DecValTok{+3}\NormalTok{+cat1.n] =}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(Category$cat1 ==}\StringTok{ }\KeywordTok{substr}\NormalTok{(Category[,i}\DecValTok{+3}\NormalTok{+cat1.n],}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{) &}
+\StringTok{                                 }\NormalTok{Category$cat2 ==}\StringTok{ }\KeywordTok{substr}\NormalTok{(Category[,i}\DecValTok{+3}\NormalTok{+cat1.n],}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{\}}
+\KeywordTok{head}\NormalTok{(Category)}
+
+\NormalTok{### delete columns if column sum is 0}
+
+\NormalTok{dummies =}\StringTok{ }\NormalTok{Category[-(}\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{)]}
+\NormalTok{cat2.val}
+\KeywordTok{colSums}\NormalTok{(dummies)}
+
+\NormalTok{emptyroot =}\StringTok{ }\KeywordTok{which}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(dummies) ==}\StringTok{ }\DecValTok{0}\NormalTok{)}
+\NormalTok{emptyroot2 =}\StringTok{ }\KeywordTok{which}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(dummies) ==}\StringTok{ }\DecValTok{2}\NormalTok{) }\CommentTok{# <------------------------fix here for no col == 0}
+\NormalTok{emptyroot}
+\NormalTok{emptyroot2}
+\NormalTok{test1 =}\StringTok{ }\NormalTok{Category[-(emptyroot}\DecValTok{+3}\NormalTok{)]}
+\KeywordTok{head}\NormalTok{(test1)}
+\NormalTok{test2 =}\StringTok{  }\NormalTok{Category}
+\KeywordTok{head}\NormalTok{(test2)}
+
+\NormalTok{Category =}\StringTok{ }\NormalTok{Category[-(emptyroot}\DecValTok{+3}\NormalTok{)]}
+\KeywordTok{head}\NormalTok{(Category)}
+
+
+\NormalTok{### create dataframe}
+
+\NormalTok{sim.data.df =}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(index, EventID, time.char, time.day, Category))}
+\NormalTok{sim.data.df$index     =}\StringTok{ }\KeywordTok{as.numeric}  \NormalTok{(sim.data.df$index)}
+\NormalTok{sim.data.df$EventID   =}\StringTok{ }\KeywordTok{as.character}\NormalTok{(sim.data.df$EventID)}
+\NormalTok{sim.data.df$time.char =}\StringTok{ }\KeywordTok{as.character}\NormalTok{(sim.data.df$time.char)}
+\NormalTok{sim.data.df$time.day  =}\StringTok{ }\KeywordTok{as.Date}     \NormalTok{(sim.data.df$time.day)}
+
+\KeywordTok{return}\NormalTok{(sim.data.df)}
+\NormalTok{\} }
+
+
+\NormalTok{###Extras}
+
+\CommentTok{#add categorical variables by random sampling? }
+\CommentTok{#add contineous variables by random sampling??? using some kind of model??}
+
+\NormalTok{########################################################################################################3333#}
+
+\NormalTok{###Testing }
+\NormalTok{simdata.test <-}\StringTok{ }\NormalTok{function()\{}
+  
+\NormalTok{test1 =}\StringTok{ }\KeywordTok{simdata} \NormalTok{(}\DecValTok{1000}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(test1)}
+\KeywordTok{str}\NormalTok{(test1)}
+\KeywordTok{colSums}\NormalTok{(test1[,}\DecValTok{7}\NormalTok{:}\KeywordTok{ncol}\NormalTok{(test1)])    }
+
+\NormalTok{v2 =}\StringTok{ }\KeywordTok{cbind}\NormalTok{(                       }\CommentTok{# number in terminal roots, sum to 1000}
+  \KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{200}\NormalTok{,}\DecValTok{100}\NormalTok{),                 }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{200}\NormalTok{,  }\DecValTok{0}\NormalTok{),}
+  \KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,  }\DecValTok{0}\NormalTok{,  }\DecValTok{0}\NormalTok{))}
+
+\NormalTok{test2 =}\StringTok{ }\KeywordTok{simdata} \NormalTok{(}\DecValTok{1000}\NormalTok{,}\DataTypeTok{cat2.val =} \NormalTok{v2)}
+\KeywordTok{head}\NormalTok{(test2)}
+\KeywordTok{str}\NormalTok{(test2)}
+\KeywordTok{colSums}\NormalTok{(test2[,}\DecValTok{7}\NormalTok{:}\KeywordTok{ncol}\NormalTok{(test2)])}
+
+\NormalTok{test3 =}\StringTok{ }\KeywordTok{simdata} \NormalTok{(}\DecValTok{1000000}\NormalTok{,}\DataTypeTok{cat2.val =} \NormalTok{v2)}
+\KeywordTok{head}\NormalTok{(test3)}
+\KeywordTok{str}\NormalTok{(test3)}
+
+\KeywordTok{system.time}\NormalTok{(}\KeywordTok{simdata} \NormalTok{(}\DecValTok{1000}\NormalTok{))}
+\KeywordTok{system.time}\NormalTok{(}\KeywordTok{simdata} \NormalTok{(}\DecValTok{1000000}\NormalTok{))}
+
+\NormalTok{\}}
+\NormalTok{#########################################################################################################}
+
+\NormalTok{###################################################################################################}
+
+\CommentTok{# Function 5, 6}
+
+\NormalTok{## functions to check simulation}
+\NormalTok{## use ggplot 2 later if we want a good presentable plot}
+
+\CommentTok{# create a function for tabulation}
+\NormalTok{#################################################}
+
+\CommentTok{#debug for simulation checking codes}
+\NormalTok{simcheck.debug <-}\StringTok{ }\NormalTok{function()\{}
+  
+\NormalTok{v2 =}\StringTok{ }\KeywordTok{cbind}\NormalTok{(            }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{200}\NormalTok{,}\DecValTok{100}\NormalTok{),                 }
+  \KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{200}\NormalTok{,  }\DecValTok{0}\NormalTok{),}
+  \KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,  }\DecValTok{0}\NormalTok{,  }\DecValTok{0}\NormalTok{))}
+
+\NormalTok{sample1 =}\StringTok{ }\KeywordTok{simdata} \NormalTok{(}\DecValTok{100000}\NormalTok{,}\DataTypeTok{cat2.val =} \NormalTok{v2)}
+\KeywordTok{head}\NormalTok{(sample1)}
+\KeywordTok{str}\NormalTok{(sample1)}
+\NormalTok{x =}\StringTok{ }\NormalTok{sample1}
+\NormalTok{\}}
+\NormalTok{##################################################}
+\end{Highlighting}
+\end{Shaded}
+
+Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
+chunk to prevent printing of the R code that generated the plot.
+
+
+\end{document}
