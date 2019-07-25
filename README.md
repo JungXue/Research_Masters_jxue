@@ -33,10 +33,5 @@ Estimated completion date: July 2019
 # To do lists
 1. Cry about the thesis
 -----------------------------------------------------------------------------------------------------
-# Current Status: 
-
-<p align="center">
-  <img src="spbwritehard.gif">
-</p>
 
 
