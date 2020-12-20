@@ -1,0 +1,108 @@
+
+\chapter{Supplemental Material}
+
+\textbf{Note:} This section contained supplementary material, such as tables / figures / graphs / image, that was not included in the main body of the thesis but will help readers to achieve more understanding if they are interested. 
+
+% https://www.overleaf.com/learn/latex/Glossaries
+\textbf{Note:} This section contained a summary of all of the most important and frequently used definitions and acronyms used in this thesis. These should have been clearly defined when they are first introduced in this thesis, however it is expected that people may have missed the definitions or was skipping while reading, so will provide a quick explanation when they needed a glossary. 
+
+
+\section*{section1}
+\subsection*{subsection1}
+
+\subsection*{Choice of priors}
+
+6 different priors were proposed and tested for the 
+A half-Cauchy prior distribution can be coded in JAGS as described in Gelman and Pardoe2.
+For example, a half-Cauchy prior for the variance parameter sigma.u1 (i.e. the estimated SD
+of the random slopes across all CA subgroups) and a scale parameter S can be calculated as
+follows
+
+The half-Cauchy prior for sigma.u1 is given by dividing a Normal distribution z.u1
+by the square root of a chi-squared distribution chiSq.u1
+
+
+The precision of z.u1 is
+
+The distribution is restricted to be greater than zero, as our mu cannot take negative values
+\begin{lstlisting}
+z.u0 ~ Normal(0, zprec)I(0,)
+\end{lstlisting}
+A chi-square distribution with 1 degree of freedom is used
+
+\begin{lstlisting}
+chiSq.u0 ~ Gamma(0.5, 0.5)
+\end{lstlisting}
+
+This can be coded in an JAGS model using a truncated t distribution
+
+\begin{lstlisting}
+sigma.u1 ~ dt(0, zprec, 1)I(0,)
+\end{lstlisting}
+
+\newpage
+
+
+
+
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|rll|} 
+		\hline
+		\textbf{Series} & \textbf{ICD-9 Label}  & \textbf{Description}\\ [0.5ex] 
+		
+		\hline\hline
+		\textit{Total}&&\\
+		
+		1 & -  & International Classification of Diseases, 9th Revision \\ 
+	
+		\hline	
+		\textit{Category lv1}&&\\
+		
+		1 &001-139  &Infectious And Parasitic Diseases\\
+		2 &140-239  &Neoplasms\\
+		3 &240-279  &Endocrine, Nutritional And Metabolic Diseases, And \\
+		&& Immunity Disorders\\
+	    ...&...&...\\
+		17 &800-999  &Injury And Poisoning\\
+	    18 &V01-V91  &Supplementary Classification Of Factors Influencing \\
+	    &&Health Status And Contact With Health Services\\
+		19 &E000-E999  &Supplementary Classification Of External Causes Of\\
+		&& Injury And Poisoning\\
+		
+		\hline	
+		\textit{Category lv2}&\textit{(001-999)}&\\
+		
+		1 &001-009  &Intestinal Infectious Diseases\\
+		2 &010-018  &Tuberculosis\\
+		3 &020-027  &Zoonotic Bacterial Diseases\\
+		...&...&...\\
+		35 &980-989  &Toxic Effects Of Substances Chiefly Nonmedicinal As\\ 
+		&&To Source\\
+		36 &990-995  &Other And Unspecified Effects Of External Causes\\
+		37 &996-999  &Complications Of Surgical And Medical Care, Not \\
+		&&Elsewhere Classified\\
+		
+		\hline	
+		\textit{Category lv3}&\textit{(001-999)}&\\
+		
+		1 &001 &Cholera\\
+		2 &002 &Typhoid and paratyphoid fevers\\
+		3 &003 &Other salmonella infections\\
+		\...&...&...\\
+		89&997 &Complications affecting specified body system not \\
+		&& elsewhere classified\\
+		89&998 &Other complications of procedures not elsewhere \\
+		&&classified\\
+		89&999 &Complications of medical care not elsewhere classified\\
+
+		\hline
+
+	\end{tabular}
+	\caption{ICD-9 Diagnosis Codes}
+	\label{fig:icd10table}
+\end{table}
+
+

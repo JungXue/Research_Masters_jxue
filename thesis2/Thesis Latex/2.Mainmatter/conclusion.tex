@@ -1,0 +1,51 @@
+
+\chapter{Conclusion} \label{chap:Conclusion1}
+
+\section{Introduction}
+
+For this thesis we ran several simulations that explore the performance of Hierarchical Bayesian Model (HBM) over the Independent Bayesian Model(IBM). We also investigated whether taking existing hierarchical structures in ICD-9 disease diagnoses codes into account would affect the anomaly signal for different occurrence levels of disease diagnoses. In this chapter, the findings from this thesis are summarised and discussed, extensions on our methodology and potential directions for future research are discussed.
+
+\section{Summary of findings}
+
+Models that used weakly-informed priors had outperformed the model with non-informative prior, in terms of model goodness-of-fit. Assignment of prior is a prerequisite of a quality model, without any prior results of our Bayesian model will differ with models that have a prior by an substantial amount. However, small differences in the distribution of the prior does not create noticeable differences, therefore we have great freedom in what prior to use. There are number of suggestion by academics in the field such as Gilman and most are fairly robust and feasible options. 
+
+\newpara
+
+size of the anomalies have strong association with several posterior values. Increase of size of anomaly will decrease number of Effective Sample Size (ESS), and increase the size of standard deviation. This is mostly due to how the relative size of values differ for large and small values. Due to the aggregation constraint there are usually significant difference in size for different levels of hierarchy, higher the hierarchy the larger the mean size. For such reasons, when we are dealing with hierarchical datasets, we must take into account the hierarchical structure otherwise power of our models will be greatly reduced. There are more information at lower levels of the hierarchy, therefore when informations about hierarchical structure is disregarded, the lower level of hierarchy often result in greatest differences between IBM and HBM.  
+
+\newpara
+
+For real-life datasets with complex hierarchical structures it was very difficult to prove superiority of HBM over IBM, and hence no conclusions can be made. there are several possible reasons that might contribute to the difficulty, such as uncertainty, and the validity of the HBM used. There are significant differences in anomaly signals of disease categories with different rate of occurrence. for more common diseases it will have greater impact on the higher hierarchy and there maybe signals from level 3 to level 1, for rare and extremely rare cases we could not detect anomaly at level 1 and can only detect anomaly ay level 2 to level 3. There seem to be a dissipating effect, that anomalies occur at a level will lose it's presences, for levels further away from the original level. Of course, this is due to aggregation of other groups masking the anomaly with their noise. For smaller categories dissipation effect are stronger.
+
+\section{Extensions on Methodology}
+
+
+Hierarchical time-series techniques have worked fairly well for our studies, some of the down side is that the time-consumliess of the process and that the optimally reconciliation algorithm gives negative results. Unfortunately function for non-negative optimal reconciliation prediction will not be implemented until after the submission of the thesis. 
+
+Uncertainty in Bayesian estimations has certainly add difficulties to the processes of model selections and result exploration. Uncertainty is a strength and a weakness of Bayesian inference, in our case difference in DIC are sometimes hard to distinguish, and we were unable to made strong claims to our findings   Also with increased parameter that contained uncertainty, the computational cost increases dramatically with the increase in dimensionality, and limits the practicality. For simple models the problems isn't so bad, but with large complex data, running models may take hours and hours, and we often cannot make significant observations from results.    
+
+\section{Implications}
+
+A possible implications of our work is to create an online signal detection alarm system that raises an alarm that notifies hospital management of congestion when and before it occurs, and models the possibility of abnormally high arrivals. With all the development in big data, data linkage and data streaming, there is enough resource for this idea to start in development in a practical setting. The idea is that by collecting data from various sources and send them to an online cloud platform, that integrates this information on arrival and exports signals of anomalies for different locations. If an alarm is raised at a location, steps could be taken at the earliest instance to deal with the problem. The essence of the idea is to detect and deal with the problem before it occurs.  It does not take any effort to call for interference if congestion happened at a location, but this takes time and human, and by the time the problem is noticed, and the message got through to management, the negative effect would already be in effect. The system would, in theory, improve the efficiency of operation and reduce the chance of congestion of happening. 
+
+\newpara
+
+Another possible practical application of our techniques is to disaggregate the geo-location attribute from the New Zealand National Minimum Dataset (NMDS) data and try to monitor the anomalies for a geo-location hierarchy. Information analyst from the Ministry of Health has suggested that anomalies in health data are often due to differences in patient management strategies for different District Health Boards(DHB) from different parts of the country. For example, is there an after-hours clinic available or is the hospital the only available treatment provider? Alternatively, does this DHB manage patients by transferring them through different facilities or does it all take place in one facility (albeit potentially covering different sites)?  Modelling and identifying anomalies at the individual doctor level, department level, individual facility level, DHB level, and island level with HBM could provide statistical evidence about how each doctor department, facility and DHB in New Zealand is performing independently and collectively. If a particular department always shows signals of abnormal arrivals, it could suggest that the department is operating at near full capacity and this particular department need more doctors and staff. If a high anomaly at particular DHB is observed, only in the evening, maybe an overall lack of staff for the after-hour clinic is the cause and roaster needs to be adjusted. The main idea is that observations of anomalies could translate into problematic operations and our HBM techniques have a significant advantage to, especially in small and time-related anomalies that are hard to detect by the intuition of hospital management, and informed decisions can be made to improve the current system and alleviate the problem of congestion. 
+
+\section{Future Directions}
+
+Future work will be aimed to extend the scope of the current simulations. For our exploratory analysis, HBM has shown to have superior performance over IBM, we could still think of other settings that could also test the robustness of HBM with datasets with different qualities, and evaluate the performance of HBM from different perspectives
+of data. For example We could increase the number of levels of hierarchy, and see how HBM perform with data with increasing complexity. We could try and test for hierarchical networks that do not necessarily follow the aggregation constraint, and see how HBM perform for networks. Another possible idea is to explore how HBM would perform if there are strong inter-level correlations, and see how multiplicity will affect our results.
+
+\newpara
+
+There is also a hope to move the current research into a more practical setting, for current crisis in hospital congestions. In order to do this a great amount of background knowledge about specific areas such as operations research, public health and hospital management is required, so we would need to try and collaborate with expert in the filed and identify issues that need to be addresses and start forming ideas about how we could address the issue with our techniques
+ 
+\section{Concluding remarks}
+
+
+Our findings suggest that Use of HBM provides better results than IBM for the case of anomaly detection for hierarchical datasets, HBM tends to have better goodness of fit and the difference in detection results are apparent. HBM is a feasible design that is well-suited for datasets that have attributes with large hierarchical structures and have an advantage over IBM in many areas. Hierarchical structures 
+
+
+
+

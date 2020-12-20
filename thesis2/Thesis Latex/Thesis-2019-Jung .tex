@@ -1,0 +1,225 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Research Master Thesis                                                        %
+%   Junhuang Xue 6365553 Msc University of Auckland New Zealand                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%NOTES:
+
+%The total length of a 120 point masters thesis is usually around 35,000–40,000 words including an abstract of 350 words. However it is important to check with your supervisor/departmental graduate adviser for individual departmental requirements, which may vary.
+
+%A binding margin of at least 19mm is required on the left for the spine, and at least 15mm margins on the three remaining sides. If printing double-sided, “mirror margins” must be used. All written and illustrative material, including headers, footers, footnotes and page numbers, must fall within these margins to allow for trimming during binding.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%preambles
+\documentclass[12pt, twoside]{report} % add draft to [] to see overfull boxes
+\usepackage{pifont}
+\usepackage{afterpage}        % For adding in empty pages
+\usepackage{amsmath}          % For maths equations
+\usepackage{booktabs}         % for table rules
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\usepackage[inner=4cm, outer=2.5cm, top=3cm, bottom=2.5cm]{geometry}
+                              % For custom margins 
+                              % See deatils on https://en.wikibooks.org/wiki/LaTeX/Page_Layout
+\usepackage{CJKutf8}          % For Chinese characters
+\usepackage{color}            % For colored texts
+\usepackage{xcolor}           % define color
+                              % See deatils on https://en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage{fancyhdr}         % For custom headers
+\usepackage{fontawesome}      % For extra symbols
+\usepackage{listings}         % for custom inline R language
+\usepackage{xcolor} % for custom inline R language colors
+
+                              % See deatils on https://tex.stackexchange.com/questions/374001/insert-r-code-in-latex
+\usepackage{microtype}        % For improved justification
+\usepackage{graphicx}         % For addin in graphics
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{csquotes}
+\usepackage[utf8]{inputenc}
+\usepackage[acronym]{glossaries}
+
+\usepackage[singlelinecheck=false]{caption} % table caption align left 
+\usepackage{fontawesome}
+\usepackage{tabularx}
+
+%\usepackage{amsthm}           % For definition and theorems 
+%\usepackage[linguistics]{forest} % For tree diagrams
+%\usepackage{parskip}          % new line between paragraphs, no indentation 
+\usepackage{pdflscape}         % create landscape page, good for PDF
+%\usepackage{tikz}             % verticle tree diagram
+%\usepackage{tikz-qtree}       % verticle tree diagram
+%\usetikzlibrary{trees}        % verticle tree diagram, fork right path
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage[caption = false]{subfig}
+                              % See deatils on https://en.wikibooks.org/wiki/LaTeX/Colors
+ \usepackage[section]{placeins}
+ \usepackage{url}
+ \usepackage{natbib}           % For apalike reference format 
+ 
+ 
+ \linespread{1.1}                            
+                              
+%=================================================================================
+% Custom macros 
+
+\newcommand\blankpage{       % Add in an empty page  
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage}
+
+\newcommand{\comm}[1]{}     %comment out large sections
+
+\newcommand{\subf}[2]{%                % add caption to sub-figures in a figre matrix
+	{\small\begin{tabular}[t]{@{}c@{}}
+			#1\\#2
+	\end{tabular}}%
+}
+
+\newcommand{\IE}[1][1]{ % indent entry for tables, use \IE
+	\hspace{#1em}\ignorespaces
+}
+
+\newcommand{\newpara}
+{
+	\vskip 0.5cm
+}
+
+\newcommand{\intexthline}
+{
+	\noindent\rule[0.5ex]{\linewidth}{1pt}
+}
+
+\newcommand{\inlineR}[1]{ 
+	\texttt{\color{blue}{\textbf{#1}}}
+}
+
+\definecolor{R-gray}{gray}{0.98}   % create very light grey for R-codes background
+\definecolor{R-gray2}{gray}{0.40}  % create dark gray for R-codes
+\definecolor{R-comment}{rgb}{0.678,0.584,0.686}
+\definecolor{R-keyword}{rgb}{0.737,0.353,0.396} % redo these 4 color 
+\definecolor{R-string}{rgb}{0.192,0.494,0.8}
+\definecolor{R-numbers}{rgb}{0.686,0.059,0.569}
+      
+\lstset{ 
+	language=R,                     % the language of the code
+	basicstyle=\footnotesize \ttfamily \color{R-gray2}, % the size of the fonts that are used for the code
+	% numbers=left,                 % line-numbers location 
+	% numberstyle=\color{gray},     % line-numbers color
+	% stepnumber=1,                 % line-numbers steps
+	% numbersep=5pt,                % line-numbers distance from code
+	showspaces=false,               % do not show spaces with underscores
+	showstringspaces=false,         % do not show spaces with underscores within strings
+	showtabs=false,                 % do not show tabs   with underscores
+	% frame=single,                 % adds a frame around the code
+	% rulecolor=\color{white},      % frame-color
+	tabsize=7,                      % size of tab 
+	captionpos=b,                   % sets the caption-position to bottom
+	breaklines=true,                % sets automatic line breaking
+	breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+	backgroundcolor=\color{R-gray}, % choose the background color. You must add \usepackage{color}
+	keywordstyle=\color{R-keyword},   % keyword style
+	commentstyle=\color{R-comment},   % comment style
+	stringstyle=\color{R-string},     % string literal style
+	sensitive = true,
+	literate=%
+   *{0}{{{\color{R-numbers}0}}}1
+	{1}{{{\color{R-numbers}1}}}1
+	{2}{{{\color{R-numbers}2}}}1
+	{3}{{{\color{R-numbers}3}}}1
+	{4}{{{\color{R-numbers}4}}}1
+	{5}{{{\color{R-numbers}5}}}1
+	{6}{{{\color{R-numbers}6}}}1
+	{7}{{{\color{R-numbers}7}}}1
+	{8}{{{\color{R-numbers}8}}}1
+	{9}{{{\color{R-numbers}9}}}1
+} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Front Matter
+
+\begin{document}  
+	
+	\include{1.Frontmatter/titlepage} 
+	\blankpage 
+
+\pagenumbering{roman} % use roman character for front matter pages 
+                      % see details on https://www.sharelatex.com/learn/Page_numbering#Numbering_styles
+
+	\include{1.Frontmatter/abstract}
+	\include{1.Frontmatter/dedication}
+	\include{1.Frontmatter/declaration}
+	\include{1.Frontmatter/acknowledgement}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Main body
+
+%Custom header and footer
+
+% E for even page
+% O for odd page
+% L for left side
+% C for centered
+% R for right side
+% _____________________
+%|LE  CE  RE|LO  CO  RO| Header
+%|          |          |
+%|          |          |
+%|    2     |     3    |
+%|          |          |
+%|          |          |
+%|__________|__________| Footer
+
+\pagestyle{fancy}
+\fancyhf{}
+	\fancyhead[CE,CO]{}
+	\fancyhead[LE,RO]{\rightmark}
+	\fancyhead[RE,LO]{\leftmark}
+	\fancyfoot[CE,CO]{\thepage}
+	\fancyfoot[LE,RO]{}
+	\fancyfoot[RE,LO]{}
+% Note: \pagenumbering{arabic} in start of 2.Mainmatter/chapter01 %%
+
+	\include{2.Mainmatter/ch1Background}
+	\include{2.Mainmatter/ch2Simulations}
+	\include{2.Mainmatter/ch3MIMIC}
+%	\include{2.Mainmatter/ch4JellyfishPoison}
+%	\include{2.Mainmatter/discussion}
+% 	\include{2.Mainmatter/ch6}
+% 	\include{2.Mainmatter/ch6}
+	\include{2.Mainmatter/conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The End Matter\right) 
+
+
+	\appendix
+%	\include{3.Endmatter/Definitions}
+%	\include{3.Endmatter/Softwares}
+	\include{3.Endmatter/R-Codes}
+%	\include{3.Endmatter/R-codes4Latex}
+%	\include{3.Endmatter/SupplementalMaterial}
+	
+\bibliography{reference}
+\bibliographystyle{apalike}
+\end{document}             
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%$http://www.phrasebank.manchester.ac.uk/?fbclid=IwAR3XIjuLYBnpVNswA_tK5IFSbt-bLf3dNUAo9JqqlSaZGO6uzzdn%shi6ZOI$ academic phrases
+
+%$https://figshare.com/$ academic figs
+
+
+
+
+

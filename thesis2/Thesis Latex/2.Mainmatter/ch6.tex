@@ -1,0 +1,37 @@
+\chapter{Conclusions}
+
+	the size definition of point anomaly and  period anomaly used are
+
+$	if mu_pointanomaly = 100, size of point anomaly will be 100, however for period anomaly, mu_period anomaly is the highest point, and not the sum total count through out the period. the distribution of period anomaly will influence the size of each day.  $
+
+for example, 
+
+List of simulated data used can be found in appendix ref
+
+name  simulation  anomaly
+
+6 Note 1000 sample did not give stable dic, try 10000
+
+
+t.start = "2006/01/01 00:00:01"   
+t.end = "2018/12/31 23:59:59"
+100000
+
+matrix1 = cbind(            
+c(100,100),                 
+c(100,100))
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrrrrrr}
+		\hline
+		N & st & et & \text{cat2.val}  & output file\\ 
+		\hline
+		100000 & "2006/01/01 00:00:01" & "2018/12/31 23:59:59" & matrix1 & raw1.df \\ 
+		100000 & "2006/01/01 00:00:01" & "2018/12/31 23:59:59" & matrix2 & raw2.df \\ 
+		100000 & "2006/01/01 00:00:01" & "2018/12/31 23:59:59" & matrix3 & raw3.df \\ 
+		100000 & "2006/01/01 00:00:01" & "2018/12/31 23:59:59" & matrix4 & raw4.df \\ 
+		\hline
+	\end{tabular}
+	\caption{Function settings for synthetic data used in section XXX}
+\end{table}

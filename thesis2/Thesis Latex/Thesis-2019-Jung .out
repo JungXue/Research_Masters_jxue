@@ -1,0 +1,66 @@
+\BOOKMARK [0][-]{chapter.1}{Background}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Emergency Department Congestion}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Motivation}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Anomaly Detection}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Hierarchical Bayesian Models}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.5.1}{The history of Bayesian statistics}{section.1.5}% 7
+\BOOKMARK [2][-]{subsection.1.5.2}{Bayesian inference}{section.1.5}% 8
+\BOOKMARK [2][-]{subsection.1.5.3}{Simulation-based estimation}{section.1.5}% 9
+\BOOKMARK [2][-]{subsection.1.5.4}{Bayesian against Frequentist}{section.1.5}% 10
+\BOOKMARK [2][-]{subsection.1.5.5}{Prior Selection}{section.1.5}% 11
+\BOOKMARK [2][-]{subsection.1.5.6}{Hierarchical Bayesian models}{section.1.5}% 12
+\BOOKMARK [2][-]{subsection.1.5.7}{DIC}{section.1.5}% 13
+\BOOKMARK [2][-]{subsection.1.5.8}{Effective Sample Size}{section.1.5}% 14
+\BOOKMARK [1][-]{section.1.6}{Hierarchical time-series}{chapter.1}% 15
+\BOOKMARK [2][-]{subsection.1.6.1}{ Structure of Hierarchical time-series}{section.1.6}% 16
+\BOOKMARK [2][-]{subsection.1.6.2}{Forecasting approaches}{section.1.6}% 17
+\BOOKMARK [1][-]{section.1.7}{Outline of Thesis}{chapter.1}% 18
+\BOOKMARK [1][-]{section.1.8}{Notations and conventions}{chapter.1}% 19
+\BOOKMARK [0][-]{chapter.2}{Simulations}{}% 20
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.2}{Simulation Methods}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.3}{Simulation 1: Prior}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.3.1}{Priors}{section.2.3}% 24
+\BOOKMARK [2][-]{subsection.2.3.2}{Simulation setups }{section.2.3}% 25
+\BOOKMARK [2][-]{subsection.2.3.3}{Results}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.4}{Discussion}{section.2.3}% 27
+\BOOKMARK [1][-]{section.2.4}{Simulation 2: Anomaly}{chapter.2}% 28
+\BOOKMARK [2][-]{subsection.2.4.1}{Simulation setups}{section.2.4}% 29
+\BOOKMARK [2][-]{subsection.2.4.2}{Rsults}{section.2.4}% 30
+\BOOKMARK [2][-]{subsection.2.4.3}{Discussion}{section.2.4}% 31
+\BOOKMARK [1][-]{section.2.5}{Simulation 3: Structure }{chapter.2}% 32
+\BOOKMARK [2][-]{subsection.2.5.1}{Simulation setups }{section.2.5}% 33
+\BOOKMARK [2][-]{subsection.2.5.2}{Results}{section.2.5}% 34
+\BOOKMARK [2][-]{subsection.2.5.3}{Discussion}{section.2.5}% 35
+\BOOKMARK [0][-]{chapter.3}{MIMIC-III}{}% 36
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.2}{Source of Data}{chapter.3}% 38
+\BOOKMARK [1][-]{section.3.3}{ICD-9}{chapter.3}% 39
+\BOOKMARK [1][-]{section.3.4}{Study Population }{chapter.3}% 40
+\BOOKMARK [1][-]{section.3.5}{Study Variables}{chapter.3}% 41
+\BOOKMARK [1][-]{section.3.6}{Model}{chapter.3}% 42
+\BOOKMARK [1][-]{section.3.7}{Anomaly}{chapter.3}% 43
+\BOOKMARK [1][-]{section.3.8}{Statistical Analyses}{chapter.3}% 44
+\BOOKMARK [1][-]{section.3.9}{Results}{chapter.3}% 45
+\BOOKMARK [1][-]{section.3.10}{Discussion}{chapter.3}% 46
+\BOOKMARK [0][-]{chapter.4}{Conclusion}{}% 47
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.2}{Summary of findings}{chapter.4}% 49
+\BOOKMARK [1][-]{section.4.3}{Extensions on Methodology}{chapter.4}% 50
+\BOOKMARK [1][-]{section.4.4}{Implications}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.5}{Future Directions}{chapter.4}% 52
+\BOOKMARK [1][-]{section.4.6}{Concluding remarks}{chapter.4}% 53
+\BOOKMARK [0][-]{appendix.A}{Codes}{}% 54
+\BOOKMARK [1][-]{section.A.1}{Simulations}{appendix.A}% 55
+\BOOKMARK [2][-]{subsection.A.1.1}{rand.day.time}{section.A.1}% 56
+\BOOKMARK [2][-]{subsection.A.1.2}{rand.day}{section.A.1}% 57
+\BOOKMARK [2][-]{subsection.A.1.3}{simdata}{section.A.1}% 58
+\BOOKMARK [2][-]{subsection.A.1.4}{cumdata}{section.A.1}% 59
+\BOOKMARK [2][-]{subsection.A.1.5}{tabulatedata}{section.A.1}% 60
+\BOOKMARK [2][-]{subsection.A.1.6}{ggcumplot}{section.A.1}% 61
+\BOOKMARK [2][-]{subsection.A.1.7}{ggdailyplot}{section.A.1}% 62
+\BOOKMARK [2][-]{subsection.A.1.8}{adddaily.anomaly}{section.A.1}% 63
+\BOOKMARK [1][-]{section.A.2}{JAGS models}{appendix.A}% 64
+\BOOKMARK [1][-]{section.A.3}{Hierarchical Time-series Predictions}{appendix.A}% 65
+\BOOKMARK [1][-]{section.A.4}{Independent and Hierarchical Models}{appendix.A}% 66

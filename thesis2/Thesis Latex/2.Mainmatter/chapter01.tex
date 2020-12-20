@@ -1,0 +1,106 @@
+\pagenumbering{arabic}
+	
+\chapter{Background}
+	
+	\section{Introduction}
+%------------------------------------------------------------------------------------------
+	\section{Motivation}
+	
+
+%------------------------------------------------------------------------------------------
+	\section{Hiercrchical models}
+	
+%http://www.texample.net/tikz/examples/merge-sort-recursion-tree/
+		\paragraph{}
+		
+%\comm{
+\begin{center}
+$\begin{bmatrix}
+	y_{t} \\
+	y_{A,t}\\
+	y_{B,t} \\
+	y_{AA,t} \\
+	y_{AB,t}\\
+	y_{BA,t} \\
+	y_{BB,t}
+\end{bmatrix}$
+=
+$\begin{bmatrix}
+	1 & 1 & 1 & 1 \\
+	1 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 1 \\
+	1  & 0  & 0  & 0  \\
+	0  & 1  & 0  & 0  \\
+	0  & 0  & 1  & 0  \\
+	0  & 0  & 0  & 1
+\end{bmatrix}$
+$\begin{bmatrix}
+	y_{AA,t} \\
+	y_{AB,t} \\
+	y_{BA,t} \\
+	y_{BB,t}
+\end{bmatrix}$
+\end{center}
+%}
+
+\begin{equation}
+{y}_t={S}{b}_{t},
+\tag{add tag here}
+\end{equation}
+	
+%------------------------------------------------------------------------------------------	
+	
+	\section{Bayesian Models}
+	
+		\section{Models}
+	
+	N = number of simulations\\
+	Y = count of patient arrivals everyday\\
+	S = Seasonality\\
+	T = Trend\\
+	C = cycles? \\
+	A = Anomalies\\
+	d = Dummies\\
+	D = disease category (bottom level)\\
+	$\mu_0$ = mean
+	
+	
+	$\sum{Y} = 1,000,000$\\
+	
+	
+	
+	\begin{equation}
+	Y = \mu_0 + \sum{d_iS_i}+ \sum{d_iA_i} + \sum{d_iD_i} + \sum{d_iT_i}\\
+	\end{equation}
+	
+	$L(\theta|x)$
+%------------------------------------------------------------------------------------------
+	\section{Anomaly Detection}
+
+%------------------------------------------------------------------------------------------
+
+	\section{Outline of Thesis}
+	
+	jjj\\
+	jjj\\
+	jjj
+	
+	\color{red}
+	
+	\newpage
+	\section{Notations and conventions }
+	
+	(add any more format that you will use, do this after most of thesis is done)
+	
+	\textbf{Note:} The following notation and conventions is used throughout this thesis to aid\\ readability:\\
+
+	\begin{tabular}{rl}
+	\textbf{Software} & Software is denoted by sans-serif font.\\\\
+		\textbf{R functions} & Functions are denoted with monospace font with two trailing \\
+		& parentheses. Arguments are similarly displayed in monospace \\
+		& with format argument = value.\\\\
+		\textbf{R packages} & Package names are given in boldface.\\\\
+		\textbf{Computer code} &  Any code is denoted with monospace font.\\\\
+	\end{tabular}
+
+	\color{black}

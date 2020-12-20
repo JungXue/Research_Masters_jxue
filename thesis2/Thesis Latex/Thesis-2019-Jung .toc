@@ -1,0 +1,72 @@
+\contentsline {chapter}{\numberline {1}Background}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Emergency Department Congestion}{2}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Motivation}{4}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Anomaly Detection}{5}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Hierarchical Bayesian Models}{8}{section.1.5}% 
+\contentsline {subsection}{\numberline {1.5.1}The history of Bayesian statistics}{8}{subsection.1.5.1}% 
+\contentsline {subsection}{\numberline {1.5.2}Bayesian inference}{9}{subsection.1.5.2}% 
+\contentsline {subsection}{\numberline {1.5.3}Simulation-based estimation}{10}{subsection.1.5.3}% 
+\contentsline {subsection}{\numberline {1.5.4}Bayesian against Frequentist}{12}{subsection.1.5.4}% 
+\contentsline {subsection}{\numberline {1.5.5}Prior Selection}{13}{subsection.1.5.5}% 
+\contentsline {subsection}{\numberline {1.5.6}Hierarchical Bayesian models}{14}{subsection.1.5.6}% 
+\contentsline {subsection}{\numberline {1.5.7}DIC}{16}{subsection.1.5.7}% 
+\contentsline {subsection}{\numberline {1.5.8}Effective Sample Size}{16}{subsection.1.5.8}% 
+\contentsline {section}{\numberline {1.6}Hierarchical time-series}{17}{section.1.6}% 
+\contentsline {subsection}{\numberline {1.6.1} Structure of Hierarchical time-series}{17}{subsection.1.6.1}% 
+\contentsline {subsection}{\numberline {1.6.2}Forecasting approaches}{19}{subsection.1.6.2}% 
+\contentsline {section}{\numberline {1.7}Outline of Thesis}{21}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Notations and conventions}{22}{section.1.8}% 
+\contentsline {chapter}{\numberline {2}Simulations}{23}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Introduction}{23}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Simulation Methods}{23}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Simulation 1: Prior}{28}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Priors}{28}{subsection.2.3.1}% 
+\contentsline {subsubsection}{Model 1 Non-informative Prior}{28}{section*.17}% 
+\contentsline {subsubsection}{Model 2 Normal($\mu $=1,$\sigma ^-2$=0.3) Prior}{29}{section*.18}% 
+\contentsline {subsubsection}{Model 3 Normal($\mu $=1,$\sigma ^-2$=0.1) Prior}{29}{section*.19}% 
+\contentsline {subsubsection}{Model 4 Gamma($alpha$=4,$beta$=3) Prior}{30}{section*.20}% 
+\contentsline {subsubsection}{Model 5 Laplace($alpha$=1,$beta$=1) Prior}{30}{section*.21}% 
+\contentsline {subsubsection}{Model 6 Mixture Prior}{31}{section*.22}% 
+\contentsline {subsection}{\numberline {2.3.2}Simulation setups }{33}{subsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.3.3}Results}{33}{subsection.2.3.3}% 
+\contentsline {subsection}{\numberline {2.3.4}Discussion}{42}{subsection.2.3.4}% 
+\contentsline {section}{\numberline {2.4}Simulation 2: Anomaly}{43}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Simulation setups}{43}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Rsults}{43}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}Discussion}{56}{subsection.2.4.3}% 
+\contentsline {section}{\numberline {2.5}Simulation 3: Structure }{58}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Simulation setups }{58}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}Results}{58}{subsection.2.5.2}% 
+\contentsline {subsection}{\numberline {2.5.3}Discussion}{70}{subsection.2.5.3}% 
+\contentsline {chapter}{\numberline {3}MIMIC-III}{72}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Introduction}{72}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Source of Data}{72}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}ICD-9}{73}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Study Population }{75}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Study Variables}{75}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Model}{76}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Anomaly}{78}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Statistical Analyses}{79}{section.3.8}% 
+\contentsline {section}{\numberline {3.9}Results}{80}{section.3.9}% 
+\contentsline {section}{\numberline {3.10}Discussion}{100}{section.3.10}% 
+\contentsline {chapter}{\numberline {4}Conclusion}{102}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introduction}{102}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Summary of findings}{102}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Extensions on Methodology}{103}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Implications}{103}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Future Directions}{104}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Concluding remarks}{105}{section.4.6}% 
+\contentsline {chapter}{\numberline {A}Codes}{106}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}Simulations}{106}{section.A.1}% 
+\contentsline {subsection}{\numberline {A.1.1}rand.day.time}{107}{subsection.A.1.1}% 
+\contentsline {subsection}{\numberline {A.1.2}rand.day}{107}{subsection.A.1.2}% 
+\contentsline {subsection}{\numberline {A.1.3}simdata}{107}{subsection.A.1.3}% 
+\contentsline {subsection}{\numberline {A.1.4}cumdata}{108}{subsection.A.1.4}% 
+\contentsline {subsection}{\numberline {A.1.5}tabulatedata}{108}{subsection.A.1.5}% 
+\contentsline {subsection}{\numberline {A.1.6}ggcumplot}{108}{subsection.A.1.6}% 
+\contentsline {subsection}{\numberline {A.1.7}ggdailyplot}{108}{subsection.A.1.7}% 
+\contentsline {subsection}{\numberline {A.1.8}adddaily.anomaly}{109}{subsection.A.1.8}% 
+\contentsline {section}{\numberline {A.2}JAGS models}{110}{section.A.2}% 
+\contentsline {section}{\numberline {A.3}Hierarchical Time-series Predictions}{113}{section.A.3}% 
+\contentsline {section}{\numberline {A.4}Independent and Hierarchical Models}{113}{section.A.4}% 

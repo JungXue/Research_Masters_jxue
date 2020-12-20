@@ -1,0 +1,39 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces DIC (with 1,000,000 iteration) summary distribution cross comparisons for model 1 to model 6\relax }}{33}{table.caption.24}% 
+\contentsline {table}{\numberline {2.2}{\ignorespaces Posterior distributions of different models for Total, with added anomalies, and calculated with independent Bayes model\relax }}{35}{table.caption.25}% 
+\contentsline {table}{\numberline {2.3}{\ignorespaces Posterior distributions of different models for A , with added anomalies, and calculated with independent Bayes model\relax }}{36}{table.caption.27}% 
+\contentsline {table}{\numberline {2.4}{\ignorespaces Posterior distributions of different models for AA, with added anomalies, and calculated with independent Bayes model\relax }}{37}{table.caption.29}% 
+\contentsline {table}{\numberline {2.5}{\ignorespaces DIC (with 1,000,000 iteration) comparisons between Independent Bayes model and Hierarchical Bayes model (HBM -IBM) for different anomalies sizes\relax }}{43}{table.caption.37}% 
+\contentsline {table}{\numberline {2.6}{\ignorespaces Posterior distributions of different models for Total, with different increments of added anomalies, and calculated with independent Bayes model\relax }}{44}{table.caption.38}% 
+\contentsline {table}{\numberline {2.7}{\ignorespaces Posterior distributions of different models for Total, with different increments of added anomalies, and calculated with Hierarchical Bayes model\relax }}{44}{table.caption.39}% 
+\contentsline {table}{\numberline {2.8}{\ignorespaces Posterior distributions of different models for A , with different increments of added anomalies, and calculated with Independent Bayes model\relax }}{45}{table.caption.40}% 
+\contentsline {table}{\numberline {2.9}{\ignorespaces Posterior distributions of different models for A , with different increments of added anomalies, and calculated with Hierarchical Bayes model\relax }}{45}{table.caption.41}% 
+\contentsline {table}{\numberline {2.10}{\ignorespaces Posterior distributions of different models for AA, with different increments of added anomalies, and calculated with Independent Bayes model\relax }}{46}{table.caption.42}% 
+\contentsline {table}{\numberline {2.11}{\ignorespaces Posterior distributions of different models for AA, with different increments of added anomalies, and calculated with Hierarchical Bayes model\relax }}{46}{table.caption.43}% 
+\contentsline {table}{\numberline {2.12}{\ignorespaces DIC comparisons for branching number at A\relax }}{58}{table.caption.50}% 
+\contentsline {table}{\numberline {2.13}{\ignorespaces Posterior distributions of different models for Total, with different brnch number at A, and calculated with Independent Bayes model\relax }}{59}{table.caption.51}% 
+\contentsline {table}{\numberline {2.14}{\ignorespaces Posterior distributions of different models for Total, with different branch number at A, and calculated with Hierarchical Bayes model\relax }}{59}{table.caption.52}% 
+\contentsline {table}{\numberline {2.15}{\ignorespaces Posterior distributions of different models for A , with different branch number at A, and calculated with independent Bayes model\relax }}{60}{table.caption.53}% 
+\contentsline {table}{\numberline {2.16}{\ignorespaces Posterior distributions of different modelsfor A , with different branch number at A, and calculated with Hierarchical Bayes model\relax }}{60}{table.caption.54}% 
+\contentsline {table}{\numberline {2.17}{\ignorespaces Posterior distributions of different models for AA, with different branch number at A, and calculated with independent Bayes model\relax }}{61}{table.caption.55}% 
+\contentsline {table}{\numberline {2.18}{\ignorespaces Posterior distributions of different modelsfor AA, with different branch number at A, and calculated with Hierarchiacl Bayes model\relax }}{61}{table.caption.56}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces ICD-9 Diagnosis Codes\relax }}{74}{table.caption.64}% 
+\contentsline {table}{\numberline {3.2}{\ignorespaces DIC comparisons for Independent Bayesian Model and Hierarchical Bayesian model for no anomaly, and anomaly added for common, rare and extremely rare diseases\relax }}{80}{table.caption.65}% 
+\contentsline {table}{\numberline {3.3}{\ignorespaces Posterior distributions for ICD 410,415 and 452 and its ancestors, with no added anomalies, and calculated with Independent Bayes Model\relax }}{81}{table.caption.66}% 
+\contentsline {table}{\numberline {3.4}{\ignorespaces Posterior distributions for ICD 410,415 and 452 and its ancestors, with no added anomalies, and calculated with Hierarchical Bayes model\relax }}{82}{table.caption.68}% 
+\contentsline {table}{\numberline {3.5}{\ignorespaces Posterior distributions for ICD 410 and its ancestors, with added anomalies, and calculated with independent Bayes model\relax }}{83}{table.caption.70}% 
+\contentsline {table}{\numberline {3.6}{\ignorespaces Posterior distributions for ICD 410 and its ancestors, with added anomalies, and calculated with Hierarchiacl Bayes model\relax }}{84}{table.caption.72}% 
+\contentsline {table}{\numberline {3.7}{\ignorespaces Posterior distributions for ICD 415 and its ancestors, with added anomalies, and calculated with independent Bayes model\relax }}{85}{table.caption.74}% 
+\contentsline {table}{\numberline {3.8}{\ignorespaces Posterior distributions for ICD 415 and its ancestors, with added anomalies, and calculated with Hierarchical Bayes model\relax }}{86}{table.caption.76}% 
+\contentsline {table}{\numberline {3.9}{\ignorespaces Posterior distributions for ICD 452 and its ancestors, with added anomalies, and calculated with independent Bayes model\relax }}{87}{table.caption.78}% 
+\contentsline {table}{\numberline {3.10}{\ignorespaces Posterior distributions for ICD 452 and its ancestors, with added anomalies, and calculated with Hierarchical Bayes model\relax }}{88}{table.caption.80}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Code used to specify Independent Bayes Models for Chapter 2.3 a\relax }}{110}{table.caption.90}% 
+\contentsline {table}{\numberline {A.2}{\ignorespaces Code used to specify BHMs for Chapter 3 b\relax }}{111}{table.caption.91}% 
+\contentsline {table}{\numberline {A.3}{\ignorespaces Code used to specify BHMs for Chapter 3 c\relax }}{112}{table.caption.92}% 
+\contentsline {table}{\numberline {A.4}{\ignorespaces Example of R code used to make time-series prediction used in Chapter 3\relax }}{113}{table.caption.93}% 
+\contentsline {table}{\numberline {A.5}{\ignorespaces JAGS code used for the Independent Bayesian Model used in Chapter 3\relax }}{113}{table.caption.94}% 
+\contentsline {table}{\numberline {A.6}{\ignorespaces JAGS code used for the Hierarchical Bayesian Model used in Chapter 3\relax }}{114}{table.caption.95}% 

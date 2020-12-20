@@ -1,0 +1,458 @@
+\chapter{Codes}
+
+This appendix provides an overview of functions created and models built in this thesis. The full collection of R, JAGS, and SAS codes used to synthesise datasets, clean and merge datasets, run simulations, and draw table and plots and are available on GitHub repository: \href{https://github.com/jungxue/research-masters-Jung}{https://github.com/jungxue/research-masters-Jung}
+
+\newpara 
+
+\textbf{Note:} All data set synthesised and used in this thesis are also uploaded on the GitHub repository, except for datasets from MIMIC Critical Care Database, more specifically three MIMIC data set were used (ADMISSIONS.csv, D\_ICD\_DIAGNOSES.csv and DIAGNOSES\_ICD.csv) for security and confidentiality reasons. To access datasets in the MIMIC database, you must complete a training course “Data or Specimens Only Research” provided by CITI, and agree to a Data Use Agreement. The whole process takes around 2-3 hours. If you would like to request MIMIC data, please visit \href{https://mimic.physionet.org/gettingstarted/access/}{https://mimic.physionet.org/gettingstarted/access/}
+
+
+\section{Simulations}\label{Rfun}
+
+Custom R Functions were created for the synthesis of datasets. Here are the  Each Function was saved on different R scripts and were simply loaded using \texttt{source()} function. The scripts can be found on the GitHub Repository. 
+
+\newpara
+
+\begin{tabular}{rl}
+	\texttt{rand.day.time}   & Generation of single random time.\\
+	\texttt{rand.day}        & Generation of N random periods with custom length.\\
+	\texttt{simdata}         & Generation of random dataset.\\
+	\texttt{cumdata}         & Convert raw simulated data into a cumulative dataset.\\
+	\texttt{tabulatedata}    & Tabulate raw simulated data into daily counts.\\
+	\texttt{ggcumplot}       & Draw a line plot from cumulative dataset.\\
+	\texttt{ggdailyplot}     & Draw a line plot from daily counts dataset.\\
+	\texttt{adddaily.anomaly}& Add custom anomalies to simulated data.\\
+\end{tabular}
+
+\newpage%------------------------------------------------------------
+
+\subsection{rand.day.time}
+
+\begin{tabular}{rl}
+	\textbf{Description:} & Generation of single random time. \\
+	\textbf{Note:} & originally by \href{https://stackoverflow.com/questions/14720983/efficiently-generate-a-random-sample-of-times-and-dates-between-two-dates}{Dirk Eddelbuettel} 2012, however there were minor  \\
+	& bugs and was improved by Thomas Lumley 2018. \\
+	\textbf{Usage:} &
+\end{tabular}
+
+\begin{lstlisting}
+rand.day.time (N, st="2006/01/01 00:00:01",et="2018/12/31 23:59:59") 
+\end{lstlisting}
+
+\begin{tabular}{rl}
+	\textbf{Arguments:} &\\
+	N & number of generations, non-adjustable default = 1.\\
+	st & starting time\\
+	et & ending time\\
+\end{tabular}
+
+\subsection{rand.day}
+
+\begin{tabular}{rl}
+	\textbf{Description:} & Generation of N random periods with custom length. \\
+	\textbf{Usage:} &
+\end{tabular}
+
+\begin{lstlisting}
+rand.day <- function(N = 2,st = "2006/01/01 00:00:01", et = "2018/12/31 23:59:59",period = c(5,3))
+\end{lstlisting}
+
+\begin{tabular}{rl}
+	\textbf{Arguments:} &\\
+	N & number of periods\\
+	st & starting time\\
+	et & ending time\\
+	period & a vector containing length of days for each period\\
+\end{tabular}
+
+\subsection{simdata}
+
+\begin{tabular}{rl}
+	\textbf{Description:} & Generation of random dataset.  \\
+	\textbf{Usage:} &
+\end{tabular}
+
+\begin{lstlisting}
+simdata <-function(sim.number = 1000000,time.start = "2006/01/01 00:00:01", time.end = "2018/12/31 23:59:59",cat2.val = qpcR:::rbind.na(c(250,250),c(250,250)))
+
+\end{lstlisting}
+\begin{tabular}{rl}
+	\textbf{Arguments:} &\\
+	sim.number & number of simulated data, each number/row correspond to a \\
+	& single event.\\
+	time.start & starting time\\
+	time.end & ending time\\
+	cat2.val & a matrix containing default number in each leaf, must sum to 1000, \\
+	& each row correspond to a branch, must use 0 for no leaf\\
+\end{tabular}
+
+\newpage%------------------------------------------------------------
+
+\subsection{cumdata}
+
+\begin{tabular}{rl}
+	\textbf{Description:} & Convert raw simulated data into a cumulative dataset.  \\
+	\textbf{Usage:} &
+\end{tabular}
+
+\begin{lstlisting}
+cumdata(x)
+\end{lstlisting}
+
+\begin{tabular}{rl}
+	\textbf{Arguments:} &\\
+	x & a dataset, created using simdata function\\
+\end{tabular}    
+
+\subsection{tabulatedata}
+
+\begin{tabular}{rl}
+	\textbf{Description:} & Tabulate raw simulated data into daily counts.  \\
+	\textbf{Usage:} &
+\end{tabular}
+
+\begin{lstlisting}
+tabulatedata(x=sample1)
+\end{lstlisting}
+
+\begin{tabular}{rl}
+	\textbf{Arguments:} &\\
+	x & a dataset, created using simdata function\\
+\end{tabular}
+
+\subsection{ggcumplot}
+
+\begin{tabular}{rl}
+	\textbf{Description:} & Draw a line plot from cumulative dataset.  \\
+	\textbf{Usage:} &
+\end{tabular}
+
+\begin{lstlisting}
+ggcumplot(data=cumdata.df,nameB1= "ggcumplotB1.jpg",nameLeaf= "ggcumplotleaf.jpg")
+\end{lstlisting}
+
+\begin{tabular}{rl}
+	\textbf{Arguments:} &\\
+	data & cumulative dataset, created using simdata and cumdata \\
+	& function\\
+	nameB1 & name for the jpg file for line plot of 1st branch\\
+	nameLeaf & name for the jpg file for line plot of leaves\\
+\end{tabular}    
+
+\subsection{ggdailyplot}
+
+\begin{tabular}{rl}
+	\textbf{Description:} & Draw a line plot from daily counts dataset. \\
+	\textbf{Usage:} &
+\end{tabular}
+
+\begin{lstlisting}
+ggdailyplot(data = dailycount.df,nameB1= "ggdailyplotB1.jpg",nameLeaf= "ggdailyplotleaf.jpg")
+\end{lstlisting}
+
+\begin{tabular}{rl}
+	\textbf{Arguments:} &\\
+	data & daily counts dataset, created using simdata and tabulatedata\\
+	& function\\
+	nameB1 & name for the jpg file for line plot of 1st branch\\
+	nameLeaf & name for the jpg file for line plot of leaves\\
+\end{tabular}
+
+\newpage%------------------------------------------------------------
+
+\subsection{adddaily.anomaly}
+
+\begin{tabular}{rl}
+	\textbf{Description:} & Add custom anomalies to simulated data. \\
+	\textbf{Usage:} &
+\end{tabular}
+
+\begin{lstlisting}
+adddaily.anomaly(data = daily1.df,usepercent = T,TotalN = 100, TotalNpercent = 1000, Anomalytype = "Period", nperiod = c(5,3), day = rand.day(N=2,period=c(5,3)), Leafpercent = rbind(c(1,1,0,0.25,0.75,0.00,0.00),c(1,1,0,1,0,0,0)), Distribution  = "Normal", output = "rdata/function/anomalytest.RData")  
+\end{lstlisting}
+
+\begin{tabular}{rl}
+	\textbf{Arguments:} &\\
+	data          & daily counts dataset, created using simdata and \\
+	& tabulatedata function\\
+	usepercent    & using percent True or False\\
+	TotalN        & if usepercent = False, count in terms of absolute number \\
+	TotalNpercent & if usepercent = True, count in terms of percentage of mean \\
+	& total \\
+	Anomalytype   & type of anomaly, Point or Period\\
+	nperiod       & number of day of each period\\
+	day           & random periods with custom length.\\
+	Leafpercent   & percentage of anomaly added on total, branch 1 and each \\
+	& leaf in a vector\\
+	Distribution  & Distribution used for period anomalies\\
+	output          & Name of output file as RData\\
+\end{tabular}
+
+\newpage %----------------------------------------------------------
+\section{JAGS models}\label{models}
+
+\begin{table}[!htb]
+	\caption{Code used to specify Independent Bayes Models for Chapter 2.3 a}
+	
+	\begin{tabularx}{\textwidth}{rX}
+		\toprule
+		Model & Example JAGS code\\
+		\bottomrule
+	\end{tabularx}
+	
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	1    # Null model
+	
+	model1.txt =  "model{
+	
+	# Likelihood
+	
+	for(j in 1:Nleaf){
+	mu[j]        <- rho[j]
+	for(i in 1:Nday){
+	Y[i,j]      ~ dpois(mu[j])
+	}}}"
+	\end{lstlisting}
+	\intexthline
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	2    # Normal(1,0.3) prior
+	
+	model2.txt =  "model{
+	
+	# Likelihood
+	
+	for(j in 1:Nleaf){
+	mu[j]        <- rho[j]*lambda
+	for(i in 1:Nday){
+	Y[i,j]      ~ dpois(mu[j])
+	}}
+	
+	### Prior
+	lambda ~ dnorm(mu2.y2, sqrt(sigma2.y2)) T(0,) 
+	
+	### Hyper prior
+	mu2.y2 ~ dnorm(1,0.1)   
+	sigma2.y2 ~ dnorm(0.3,0.1)
+	}"
+	
+	\end{lstlisting}
+\end{table}
+
+\newpage
+
+\begin{table}[!htb]
+	\caption{Code used to specify BHMs for Chapter 3 b}
+	
+	\begin{tabularx}{\textwidth}{rX}
+		\toprule
+		Model & JAGS code\\
+		\bottomrule
+	\end{tabularx}
+	
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	3    # Normal(1,0.1) prior
+	
+	model3.txt =  "model{
+	
+	# Likelihood
+	
+	for(j in 1:Nleaf){
+	mu[j]        <- rho[j]*lambda
+	for(i in 1:Nday){
+	Y[i,j]      ~ dpois(mu[j])
+	}
+	}
+	
+	### Prior
+	lambda ~ dnorm(mu2.y3, sqrt(sigma2.y3)) T(0,) 
+	
+	### Hyper prior
+	mu2.y3 ~ dnorm(1,0.1)   
+	sigma2.y3 ~ dnorm(0.1,0.1)
+	}"
+	\end{lstlisting}
+	\intexthline
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	4    # Gamma(4,3) prior
+	
+	model4.txt =  "model{
+	
+	# Likelihood
+	
+	for(j in 1:Nleaf){
+	mu[j]        <- rho[j]*lambda
+	for(i in 1:Nday){
+	Y[i,j]      ~ dpois(mu[j])
+	}
+	}
+	
+	### Prior
+	lambda ~ dgamma(alpha.y4,beta.y4) T(0,) 
+	
+	### Hyper prior
+	alpha.y4 ~ dnorm(4,0.1)  
+	beta.y4 ~ dnorm(3,0.1)
+	}"
+	\end{lstlisting}
+\end{table}
+
+\newpage
+\begin{table}[!htb]
+	\caption{Code used to specify BHMs for Chapter 3 c}
+	
+	\begin{tabularx}{\textwidth}{rX}
+		\toprule
+		Model & JAGS code\\
+		\bottomrule
+	\end{tabularx}
+	
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	5    # laplace(1,1) prior
+	
+	model5.txt =  "model{
+	
+	# Likelihood
+	
+	for(j in 1:Nleaf){
+	mu[j]        <- rho[j]*lambda
+	for(i in 1:Nday){
+	Y[i,j]      ~ dpois(mu[j])
+	}}
+	
+	### Prior
+	lambda ~ ddexp(mean.y5,scale.y5) T(0,) 
+	
+	### Hyper prior
+	mean.y5 ~ dnorm(1,0.1)
+	scale.y5 ~ dnorm(1,0.1)
+	}"
+	\end{lstlisting}
+	\intexthline
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	6    # 0.9 Mixture prior with Normal(1,0.1) prior
+	
+	model6.txt =  "model{
+	
+	# Likelihood
+	
+	for(j in 1:Nleaf){
+	mu[j]        <- rho[j]*lambda
+	for(i in 1:Nday){
+	Y[i,j]      ~ dpois(mu[j])
+	}}
+	
+	### Prior
+	lambda ~ dnorm(spike*1 + (1 - spike)*slab, 0.1) T(0,) 
+	
+	### Hyper prior
+	spike ~ dbin(0.9,1)
+	slab ~ dnorm(mu2.y6, sqrt(sigma2.y6)) 
+	
+	### Hyper-hyper prior
+	mu2.y6 ~ dnorm(1,0.1)  
+	sigma2.y6 ~ dnorm(0.1,0.1) 
+	}"
+	\end{lstlisting}
+\end{table}
+
+\newpage %----------------------------------------------------------
+
+\section{Hierarchical Time-series Predictions}\label{htsp}
+\begin{table}[!h]
+	\caption{Example of R code used to make time-series prediction used in Chapter 3}
+	
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	fc3 = forecast(mimic3.yearly.hts, h = 1, method = "comb", 
+	fmethod = "arima", FUN = function(x) tbats(x, use.parallel = TRUE)) 
+	fc7 = forecast(mimic3.yearly.hts, h = 1, method = "bu", fmethod = "arima", FUN = function(x) tbats(x, use.parallel = TRUE)) 
+	\end{lstlisting}
+	
+\end{table}
+
+\section{Independent and Hierarchical Models}
+
+\begin{table}[!h]
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	modelmimic.txt =  "model{
+	
+	# Likelihood
+	
+	for(j in 1:Nleaf){
+	mu[j]        <- rho[j]*lambda[j]
+	for(i in 1:Nday){
+	Y[i,j]      ~ dpois(mu[j])
+	}}
+	
+	for(j in 1:Nleaf){
+	
+	### Prior
+	
+	lambda[j] ~ dnorm(mu2.y2[j], sqrt(sigma2.y2[j])) T(0,) 
+	
+	### Hyper prior
+	
+	mu2.y2[j] ~ dnorm(1,0.1)   
+	sigma2.y2[j] ~ dnorm(0.1,0.1)
+	}}"
+	
+	\end{lstlisting}
+	\caption{JAGS code used for the Independent Bayesian Model used in Chapter 3}
+	\label{ibmhbm}
+\end{table}
+
+
+\newpage %----------------------------------------------------------
+
+\begin{table}[!h]
+	\begin{lstlisting}[language=R, showstringspaces=false]
+	modelmimich.txt =  "model{
+	
+	### Level 0
+	
+	mu2.y2.lv0 ~ dnorm(1,0.1) 
+	sigma2.y2.lv0 ~ dnorm(0.1,0.1) 
+	lambda1 ~ dnorm(mu2.y2.lv0, sigma2.y2.lv0) T(0,)
+	
+	### level 1
+	
+	for(l in 1:Nlv1){
+	
+	mu2.y2.lv1[l] ~ dnorm(lambda1,0.1) 
+	sigma2.y2.lv1[l] ~ dnorm(1,0.1) 
+	lambda2[l] ~ dnorm(mu2.y2.lv1[l], sigma2.y2.lv1[l]) T(0,) 
+	}
+	
+	### Level 2
+	
+	for(m in 1:Nlv2){
+	
+	mu2.y2.lv2[m] ~ dnorm(lambda2[lV1b[m]],0.1) 
+	sigma2.y2.lv2[m] ~ dnorm(1,0.1) 
+	lambda3[m] ~ dnorm(mu2.y2.lv2[m], sigma2.y2.lv2[m]) T(0,) 
+	}
+	
+	### level 3
+	
+	for (n in 1:Nlv3){
+	mu2.y2.lv3[n] ~ dnorm(lambda3[lV2b[n]],0.1) 
+	sigma2.y2.lv3[n] ~ dnorm(1,0.1) 
+	lambda4[n] ~ dnorm(mu2.y2.lv3[n], sigma2.y2.lv3[n]) T(0,) 
+	}
+	
+	# prior * Likelihood
+	
+	lambda      <- c(lambda1,lambda2,lambda3,lambda4)
+	
+	for(j in 1:Nleaf){
+	mu[j]       <- rho[j]*lambda[j]
+	for(i in 1:Nday){
+	Y[i,j]      ~ dpois(mu[j])
+	}}
+	
+	}"
+	\end{lstlisting}
+	\caption{JAGS code used for the Hierarchical Bayesian Model used in Chapter 3}
+	\label{ibmhbm2}
+\end{table}
+
+\newpage %------------------------------------------------------------------------------------------
